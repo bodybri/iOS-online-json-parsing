@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentViewRow: View {
     
-    @Environment var model: ContentModel
+    @EnvironmentObject var model: ContentModel
     
     var index: Int
     

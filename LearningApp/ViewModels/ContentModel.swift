@@ -9,7 +9,7 @@ import Foundation
 
 class ContentModel: ObservableObject {
     
-    // list of module
+    // List of modules
     @Published var modules = [Module]()
     
     // Current module
@@ -20,6 +20,8 @@ class ContentModel: ObservableObject {
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    // Current lesson explanation
+    @Published var lessonDescription = NSAttributedString()
     var styleData: Data?
     
     init() {
@@ -31,12 +33,12 @@ class ContentModel: ObservableObject {
     // MARK: - Data methods
     
     func getLocalData() {
-     
-        // Get url to json file
+        
+        // Get a url to the json file
         let jsonUrl = Bundle.main.url(forResource: "data", withExtension: "json")
         
         do {
-            // Read the file into data object
+            // Read the file into a data object
             let jsonData = try Data(contentsOf: jsonUrl!)
             
             // Try to decode the json into an array of modules
@@ -45,57 +47,61 @@ class ContentModel: ObservableObject {
             
             // Assign parsed modules to modules property
             self.modules = modules
-            
         }
         catch {
             // TODO log error
-            print("Could't parse local data")
+            print("Couldn't parse local data")
         }
         
+        // Parse the style data
         let styleUrl = Bundle.main.url(forResource: "style", withExtension: "html")
         
         do {
+            
+            // Read the file into a data object
             let styleData = try Data(contentsOf: styleUrl!)
             
             self.styleData = styleData
         }
         catch {
-            // log error
-            print("Could't parse style data")
+            // Log error
+            print("Couldn't parse style data")
         }
+        
     }
     
-    // MARK: Module navigation methods
+    // MARK: - Module navigation methods
     
     func beginModule(_ moduleid:Int) {
         
-        // find the index for this module id
+        // Find the index for this module id
         for index in 0..<modules.count {
-            // find the matching module
+            
             if modules[index].id == moduleid {
-                // found the matching module
+            
+                // Found the matching module
                 currentModuleIndex = index
                 break
             }
         }
         
-        // set the current module
+        // Set the current module
         currentModule = modules[currentModuleIndex]
-        
     }
     
     func beginLesson(_ lessonIndex:Int) {
         
-        // Check that the current lesson is within range of module lessons
+        // Check that the lesson index is within range of module lessons
         if lessonIndex < currentModule!.content.lessons.count {
             currentLessonIndex = lessonIndex
         }
         else {
             currentLessonIndex = 0
         }
+        
         // Set the current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
-        
+        lessonDescription = addStyling(currentLesson!.explanation)
     }
     
     func nextLesson() {
@@ -106,19 +112,43 @@ class ContentModel: ObservableObject {
         // Check that it is within range
         if currentLessonIndex < currentModule!.content.lessons.count {
             
+            // Set the current lesson property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
+            lessonDescription = addStyling(currentLesson!.explanation)
         }
         else {
-            // reset the current lesson
+            // Reset the lesson state
             currentLessonIndex = 0
             currentLesson = nil
         }
     }
-    
     
     func hasNextLesson() -> Bool {
         
         return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
     }
     
+    // MARK: - Code Styling
+    
+    private func addStyling(_ htmlString: String) -> NSAttributedString {
+        
+        var resultString = NSAttributedString()
+        var data = Data()
+        
+        // Add the styling data
+        if styleData != nil {
+            data.append(styleData!)
+        }
+        
+        // Add the html data
+        data.append(Data(htmlString.utf8))
+        
+        // Convert to attributed string
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            
+            resultString = attributedString
+        }
+        
+        return resultString
+    }
 }

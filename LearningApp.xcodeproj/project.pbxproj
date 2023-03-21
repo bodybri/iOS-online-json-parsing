@@ -21,6 +21,7 @@
 		00D01F2A29C964D3005711C1 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D01F2929C964D2005711C1 /* ContentDetailView.swift */; };
 		00D01F2D29C96A41005711C1 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D01F2C29C96A41005711C1 /* AVKit.framework */; };
 		00D01F2F29C973E2005711C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D01F2E29C973E2005711C1 /* Constants.swift */; };
+		00D01F3129CA6F8D005711C1 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D01F3029CA6F8D005711C1 /* CodeTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		00D01F2929C964D2005711C1 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		00D01F2C29C96A41005711C1 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		00D01F2E29C973E2005711C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00D01F3029CA6F8D005711C1 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				00D01F2529C835FC005711C1 /* ContentView.swift */,
 				00D01F2729C84E4A005711C1 /* ContentViewRow.swift */,
 				00D01F2929C964D2005711C1 /* ContentDetailView.swift */,
+				00D01F3029CA6F8D005711C1 /* CodeTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				00D01F2F29C973E2005711C1 /* Constants.swift in Sources */,
 				00D01F2A29C964D3005711C1 /* ContentDetailView.swift in Sources */,
 				00D01F0829C691DB005711C1 /* LearningApp.swift in Sources */,
+				00D01F3129CA6F8D005711C1 /* CodeTextView.swift in Sources */,
 				00D01F2829C84E4A005711C1 /* ContentViewRow.swift in Sources */,
 				00D01F1C29C6942D005711C1 /* ContentModel.swift in Sources */,
 				00D01F2229C7FB77005711C1 /* Models.swift in Sources */,

@@ -22,15 +22,17 @@ struct CodeTextView: UIViewRepresentable {
     func updateUIView(_ textView: UITextView, context: Context) {
         
         // Set the attributed text for the lesson
-        textView.attributedText = model.lessonDescription
+        textView.attributedText = model.codeText
         
         // Scroll back to the top
         textView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
     }
     
 }
+
 struct CodeTextView_Previews: PreviewProvider {
     static var previews: some View {
         CodeTextView()
+            .environmentObject(ContentModel())
     }
 }

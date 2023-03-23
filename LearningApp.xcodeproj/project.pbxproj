@@ -24,6 +24,7 @@
 		00D01F3129CA6F8D005711C1 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D01F3029CA6F8D005711C1 /* CodeTextView.swift */; };
 		00D01F3329CA8A1E005711C1 /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D01F3229CA8A1E005711C1 /* RectangleCard.swift */; };
 		00D01F3529CAC2BD005711C1 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D01F3429CAC2BD005711C1 /* TestView.swift */; };
+		00D01F3729CBCE4E005711C1 /* TestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D01F3629CBCE4E005711C1 /* TestResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		00D01F3029CA6F8D005711C1 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		00D01F3229CA8A1E005711C1 /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		00D01F3429CAC2BD005711C1 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		00D01F3629CBCE4E005711C1 /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				00D01F3029CA6F8D005711C1 /* CodeTextView.swift */,
 				00D01F3229CA8A1E005711C1 /* RectangleCard.swift */,
 				00D01F3429CAC2BD005711C1 /* TestView.swift */,
+				00D01F3629CBCE4E005711C1 /* TestResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D01F3529CAC2BD005711C1 /* TestView.swift in Sources */,
+				00D01F3729CBCE4E005711C1 /* TestResultView.swift in Sources */,
 				00D01F0A29C691DB005711C1 /* HomeView.swift in Sources */,
 				00D01F2429C81E6F005711C1 /* HomeViewRow.swift in Sources */,
 				00D01F2629C835FC005711C1 /* ContentView.swift in Sources */,
